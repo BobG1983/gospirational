@@ -2,8 +2,15 @@ package main
 
 import (
 	"fmt"
+	"log"
+
+	"github.com/ShriekBob/goismatic"
 )
 
 func main() {
-	fmt.Println("Hello World")
+	quote, err := goismatic.Get(goismatic.English)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(quote)
 }
